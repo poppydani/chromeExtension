@@ -1,0 +1,8 @@
+
+.dani-class div,
+.dani-class * {
+  background-color: rgba(76, 175, 80, 0.34)!important;
+}
+.dani-class .se-form {
+  display: none;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>右上角弹出窗</title>
+    <style>
+      body {
+        text-align: center;
+        padding: 20px 0;
+      }
+      .popup {
+        min-width: 300px;
+        margin: 50px;
+        text-align: center;
+      }
+      button {
+        background: transparent;
+        border: 1px solid #ccc;
+        padding: 10px 20px;
+        border-radius: 50px;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="popup">
+      这是popup页面~~~
+    </div>
+    <input type="checkbox" id="theme" value="theme" />
+    <label for="theme"> 是否自定义页面</label>
+    <br />
+    <button id="down">向background发消息</button>
+  </body>
+  <script src="./js/popup.js"></script>
+</html>

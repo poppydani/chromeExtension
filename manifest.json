@@ -1,0 +1,61 @@
+{
+  "manifest_version": 2,
+  "name": "dani's demo",
+  "version": "1.0.0",
+  "description": "简单的Chrome扩展demo",
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "browser_action": {
+    "default_title": "这是一个示例Chrome插件",
+    "default_popup": "popup.html"
+  },
+
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "notifications",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "http://*/*",
+    "https://*/*",
+    "bookmarks",
+    "downloads",
+    "cookies",
+    "storage"
+  ],
+  "web_accessible_resources": ["js/inject.js"],
+  "homepage_url": "https://www.baidu.com",
+  "content_scripts": 
+    [
+        {
+          "matches": ["https://*/*", "http://*/*"],
+          "js": ["js/1.2.0/zepto.min.js", "js/content-script.js"],
+          "css": ["css/content.css"],
+          "run_at": "document_end"
+        }
+    ],
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "omnibox": { "keyword": "dani" },
+  "devtools_page": "devtools.html",
+  "chrome_settings_overrides": {
+    "homepage": "https://welearnmore.gitbook.io/chrome-extension-book/",
+    "search_provider": {
+      "encoding": "UTF-8",
+      "favicon_url": "https://www.baidu.com/favicon.ico",
+      "is_default": true,
+      "keyword": "baidu.com",
+      "name": "baidu",
+      "search_url": "https://baidu.com/?q={searchTerms}"
+    },
+    "bookmarks": "bookmarks.html"
+  }
+}
